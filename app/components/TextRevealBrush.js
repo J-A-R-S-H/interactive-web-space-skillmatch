@@ -13,7 +13,6 @@ const TextRevealBrush = () => {
   const svgRef = useRef(null);
   const gRef = useRef(null);
 
-  // Track pointer state in refs to avoid re-renders
   const pointer = useRef({ x: 0, y: 0 });
   const smoothPointer = useRef({ x: 0, y: 0 });
   const hasStarted = useRef(false);
