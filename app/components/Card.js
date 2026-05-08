@@ -1,11 +1,13 @@
-import React from 'react'
-
-export const Card = () => {
+import Image from "next/image";
+export const Card = (id, frontSrc, frontAlt, backText) => {
   return (
-    <div className='banner'>
-        <div className='starter'>
-         <img src='https://tavitsphotography.com/wp-content/uploads/2023/07/JNF-114-2-1080x721.jpg.webp'/>    
+    <div className="card" id={id}>
+      <div className="card-wrapper">
+        <div className="flip-card-inner">
+          <div className="flip-card-front"></div>
+          <div className="flip-card-back"></div>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};

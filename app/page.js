@@ -1,13 +1,31 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 import { Card } from "./components/Card";
-
+import { useState } from "react";
+import TextRevealBrush from "./components/TextRevealBrush";
 export default function Home() {
   return (
     <div>
-        <Card/>
-         <Card/>
-          <Card/>
+      <section className="hero">
+        <h1>
+          Keep Scrolling to <br /> reveal the Cards
+        </h1>
+      </section>
+      <section className="cards">
+        {[...Array(4)].map((_, index) => (
+          <Card
+            key={index}
+            index={`card-${index + 1}`}
+            frontSrc="/back-card.jpg"
+            frontAlt="Card Image"
+            backText="Your card details"
+          />
+        ))}
+      </section>
+      <section className="footer">
+        <h1>Footer or Upcoming Section</h1>
+      </section>
+
+      <TextRevealBrush />
     </div>
   );
 }
