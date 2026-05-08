@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 
-const FAQ = () => {
-  const [step, setStep] = useState(0);
+const FullPageChat = () => {
+  const [step, setStep] = useState(1); 
 
   const script = [
     { text: "Yo! Ready to explore the project?", sender: "bot" },
@@ -14,107 +14,106 @@ const FAQ = () => {
     { text: "Perfect. Let's get started.", sender: "user" }
   ];
 
-  const handleNext = () => {
-    if (step < script.length) {
-      setStep(step + 1);
+  const handleChoiceClick = () => {
+    setStep(prev => prev + 1); 
+    
+    if (step < script.length - 1) {
+      setTimeout(() => {
+        setStep(prev => prev + 1);
+      }, 600);
     }
   };
 
   const bubbleBase = {
-    padding: '30px 40px', // Massive padding
-    fontSize: '24px',     // Huge text
+    padding: '40px 60px', // Even bigger padding
+    fontSize: '32px',     // Increased font size for maximum impact
     fontWeight: '900',
-    border: '4px solid black',
-    boxShadow: '10px 10px 0px 0px black',
-    maxWidth: '70%',      // Allows them to be very wide
-    marginBottom: '40px',
-    animation: 'slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+    border: '5px solid black', // Thicker borders
+    boxShadow: '12px 12px 0px 0px black',
+    maxWidth: '85%',      // Stretches further across the screen
+    marginBottom: '50px',
     fontFamily: 'sans-serif',
     position: 'relative',
-    lineHeight: '1.2',
+    lineHeight: '1.1',
     textTransform: 'uppercase',
+    transition: 'all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
   };
 
   return (
-    <div style={{ 
-      width: '100vw', 
-      minHeight: '100vh',
-      display: 'flex', 
-      flexDirection: 'column',
-      padding: '100px 0', // Space for top/bottom
-      backgroundColor: 'transparent',
-      overflowX: 'hidden'
-    }}>
-      
-      {/* Messages Wrapper - Stretching to screen edges */}
+    <div style={{ width: '100vw', padding: '120px 0', overflowX: 'hidden' }}>
       <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-        {script.slice(0, step).map((msg, index) => {
+        
+        {script.map((msg, index) => {
+          const isVisible = index < step;
+          const isCurrentChoice = index === step && msg.sender === 'user';
           const isBot = msg.sender === 'bot';
+
+          if (!isVisible && !isCurrentChoice) return null;
+
           return (
             <div 
-              key={index} 
+              key={index}
+              onClick={isCurrentChoice ? handleChoiceClick : null}
               style={{
                 ...bubbleBase,
                 alignSelf: isBot ? 'flex-start' : 'flex-end',
-                backgroundColor: isBot ? '#FFFFFF' : '#C4FF61',
-                // Remove rounded corners on the edge side to make it "hit" the screen
-                borderRadius: isBot ? '0px 40px 40px 0px' : '40px 0px 0px 40px',
-                // Ensure the border touches the literal edge
-                marginLeft: isBot ? '-4px' : '0',
-                marginRight: !isBot ? '-4px' : '0',
+                backgroundColor: isBot ? '#FFFFFF' : (isCurrentChoice ? '#FFD700' : '#C4FF61'),
+                borderRadius: isBot ? '0px 50px 50px 0px' : '50px 0px 0px 50px',
+                marginLeft: isBot ? '-5px' : '0',
+                marginRight: !isBot ? '-5px' : '0',
+                cursor: isCurrentChoice ? 'pointer' : 'default',
+                // Interactive choice styling
+                transform: isCurrentChoice ? 'scale(1.05)' : 'scale(1)',
+                zIndex: isCurrentChoice ? 10 : 1,
+              }}
+              // Adding hover effect via JS for the choice bubble
+              onMouseEnter={(e) => {
+                if (isCurrentChoice) {
+                  e.currentTarget.style.transform = 'scale(1.1) translateX(-10px)';
+                  e.currentTarget.style.backgroundColor = '#FF5F2E'; // Orange from your logo
+                  e.currentTarget.style.color = 'white';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (isCurrentChoice) {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.backgroundColor = '#FFD700';
+                  e.currentTarget.style.color = 'black';
+                }
               }}
             >
-              {msg.text}
+              {isCurrentChoice ? "???" : msg.text}
+              
+              {isCurrentChoice && (
+                <div style={{ 
+                  fontSize: '14px', 
+                  position: 'absolute', 
+                  top: '-35px', 
+                  right: '40px', 
+                  color: 'black',
+                  fontWeight: '900',
+                  backgroundColor: '#C4FF61',
+                  padding: '4px 10px',
+                  border: '2px solid black',
+                  boxShadow: '3px 3px 0px 0px black'
+                }}>
+                  Click to find the Answer here
+                </div>
+              )}
             </div>
           );
         })}
       </div>
 
-      {/* Controller Button - Fixed at bottom center */}
-      <div style={{ 
-        position: 'fixed', 
-        bottom: '50px', 
-        left: '50%', 
-        transform: 'translateX(-50%)', 
-        zIndex: 1000 
-      }}>
-        <button 
-          onClick={handleNext}
-          disabled={step >= script.length}
-          style={{
-            width: '90px',
-            height: '90px',
-            borderRadius: '50%',
-            backgroundColor: '#FF5F2E',
-            border: '5px solid black',
-            fontSize: '48px',
-            fontWeight: '900',
-            cursor: step >= script.length ? 'default' : 'pointer',
-            boxShadow: '6px 6px 0px 0px black',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            opacity: step >= script.length ? '0.2' : '1',
-            transition: 'all 0.1s',
-            outline: 'none',
-            color: 'black'
-          }}
-          onMouseDown={(e) => step < script.length && (e.currentTarget.style.transform = 'translate(4px, 4px)')}
-          onMouseUp={(e) => e.currentTarget.style.transform = 'translate(0px, 0px)'}
-        >
-          {step >= script.length ? "✓" : "+"}
-        </button>
-      </div>
-
       <style>{`
         @keyframes slideIn {
-          from { opacity: 0; transform: translateX(${step % 2 === 0 ? '50px' : '-50px'}) scale(0.95); }
-          to { opacity: 1; transform: translateX(0) scale(1); }
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        body { margin: 0; overflow-x: hidden; }
+        body { margin: 0; background-color: #F9F6EE; }
       `}</style>
     </div>
   );
 };
 
-export default FAQ;
+export default FullPageChat;
