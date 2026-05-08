@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { forwardRef } from "react";
 
 export const Card = ({ id, frontSrc, frontAlt, backText }) => {
   return (
