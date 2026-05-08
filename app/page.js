@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <section className="top-hero">
         <h2>
-          Keep Scrolling to <br /> reveal the Cards
+          Keep Scrolling to <br /> reveal the Cards s
         </h2>
       </section>
       <section className="cards">
