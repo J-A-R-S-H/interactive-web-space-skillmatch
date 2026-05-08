@@ -3,52 +3,113 @@
 import React from 'react';
 
 const Navbar = () => {
+  // Helper for flex layout
+  const flexCenter = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
+  // The "Nuclear Option" for text - forcing it to 11px
+  const textStyle = {
+    fontSize: '11px',
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    fontFamily: 'sans-serif',
+    letterSpacing: '0.02em',
+    lineHeight: '1',
+  };
+
   return (
-    // Wrapper: Forces everything inside to be small and centered
-    <div className="w-full flex justify-center pt-10 bg-[#F9F6EE] leading-none">
-      <div className="flex items-center gap-3 max-w-max">
+    <header style={{
+      position: 'fixed',
+      top: '0',
+      left: '0',
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      paddingTop: '24px',
+      zIndex: 9999,
+      pointerEvents: 'none',
+    }}>
+      <div style={{ ...flexCenter, gap: '8px', pointerEvents: 'auto' }}>
         
-        {/* Left Side: Dark Nav */}
-        <div className="relative h-10 flex items-center bg-[#1A1A1A] rounded-l-lg pl-2 pr-10">
-          
-          {/* Logo - Fixed Size */}
-          <div className="bg-[#FF5F2E] !w-7 !h-7 rounded-md flex items-center justify-center mr-3 shrink-0">
-            <span className="font-black text-black !text-sm italic !leading-none">N</span>
+        {/* Dark Navigation Bar */}
+        <nav style={{
+          backgroundColor: '#1A1A1A',
+          height: '42px',
+          display: 'flex',
+          alignItems: 'center',
+          paddingLeft: '8px',
+          paddingRight: '48px',
+          borderRadius: '12px 0 0 12px',
+          position: 'relative',
+          clipPath: "polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%)",
+        }}>
+          {/* Logo Box */}
+          <div style={{
+            backgroundColor: '#FF5F2E',
+            width: '32px',
+            height: '32px',
+            borderRadius: '8px',
+            marginRight: '12px',
+            ...flexCenter,
+          }}>
+            <span style={{ 
+              color: 'black', 
+              fontWeight: '900', 
+              fontSize: '16px', 
+              fontStyle: 'italic'
+            }}>Badr</span>
           </div>
 
-          {/* Links - Explicitly forcing small text */}
-          <div className="flex items-center gap-4 whitespace-nowrap">
-            <button className="bg-[#333333] text-white px-3 py-1.5 rounded-lg !text-[10px] font-bold uppercase tracking-tight">
-              Project
-            </button>
-            <span className="text-gray-400 !text-[10px] font-bold cursor-pointer hover:text-white uppercase tracking-tight">Navigators</span>
-            <span className="text-gray-400 !text-[10px] font-bold cursor-pointer hover:text-white uppercase tracking-tight">Rewards</span>
-            <span className="text-gray-400 !text-[10px] font-bold cursor-pointer hover:text-white uppercase tracking-tight">FAQ</span>
+          {/* Links */}
+          <ul style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '20px', 
+            listStyle: 'none', 
+            margin: 0, 
+            padding: 0 
+          }}>
+            <li style={{ 
+              ...textStyle, 
+              backgroundColor: '#333', 
+              color: 'white', 
+              padding: '6px 12px', 
+              borderRadius: '6px' 
+            }}>did</li>
             
-            <div className="h-3 w-[1px] bg-gray-700 mx-1" />
+            <li style={{ ...textStyle, color: '#999', cursor: 'pointer' }}>Navigators</li>
+            <li style={{ ...textStyle, color: '#999', cursor: 'pointer' }}>Rewards</li>
+            <li style={{ ...textStyle, color: '#999', cursor: 'pointer' }}>FAQ</li>
             
-            <div className="flex items-center gap-1 text-gray-400 !text-[10px] font-bold cursor-pointer hover:text-white uppercase tracking-tight">
-              Products
-              <svg className="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
+            <div style={{ width: '1px', height: '16px', backgroundColor: '#333', margin: '0 4px' }} />
 
-          {/* Arrow Tip - This stays relative to the bar height */}
-          <div 
-            className="absolute right-0 top-0 h-full w-6 translate-x-full bg-[#1A1A1A]" 
-            style={{ clipPath: 'polygon(0 0, 0% 100%, 100% 50%)' }}
-          />
-        </div>
+            <li style={{ ...textStyle, color: '#999', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              not 
+            </li>
+          </ul>
+        </nav>
 
-        {/* Right Side: Launch Button */}
-        <button className="h-10 bg-[#C4FF61] hover:bg-[#b5f04a] text-black font-black !text-[10px] px-5 rounded-full border-2 border-black shadow-[0px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-[2px] active:shadow-none transition-all uppercase tracking-wider whitespace-nowrap">
-          Launch Game
+        {/* Launch Button */}
+        <button style={{
+          height: '42px',
+          backgroundColor: '#C4FF61',
+          border: '2px solid black',
+          borderRadius: '24px',
+          padding: '0 24px',
+          ...textStyle,
+          fontWeight: '900',
+          cursor: 'pointer',
+          boxShadow: '0 4px 0 0 black',
+          whiteSpace: 'nowrap'
+        }}>
+          do his part
         </button>
 
       </div>
-    </div>
+    </header>
   );
 };
 

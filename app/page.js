@@ -8,15 +8,18 @@ import ReactLenis from "lenis/react";
 import TextRevealBrush from "./components/TextRevealBrush";
 import BackCard from "../public/back-card.jpg";
 import Navbar from "@/app/components/NavBar";
+import FAQ from "@/app/components/FAQ"
 
 export default function Home() {
   const container = useRef(null);
   const cardRefs = useRef([]);
 
   return (
+    
     <ReactLenis root>
       <div className="container" ref={container}>
-        <Navbar/>
+      <Navbar/>
+      
         <section className="top-hero">
           <h2>
             Keep Scrolling to <br /> reveal the Cards
@@ -40,6 +43,7 @@ export default function Home() {
         </section>
 
         <TextRevealBrush />
+        <FAQ/>
       </div>
     </ReactLenis>
   );
