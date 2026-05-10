@@ -162,11 +162,15 @@ h2{
   backface-visibility: hidden;
   border-radius: 0.8rem;
   overflow: hidden;
+  border: 3px solid #51174E; 
+  border-radius: 12px; 
+  box-sizing: border-box;
 }
 
 .flip-card-front {
-  background-color: tomato;
+  background-color: #E8E6FA;
 }
+
 
 .flip-card-back {
   display: flex;

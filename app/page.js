@@ -207,7 +207,7 @@ export default function Home() {
               id={`card-${index + 1}`}
               frontSrc={BackCard}
               frontAlt="Card Image"
-              backText="Your card details"
+              backText={"Javascript, React, Whatever"}
               ref={(el) => (cardRefs.current[index] = el)}
             />
           ))}
