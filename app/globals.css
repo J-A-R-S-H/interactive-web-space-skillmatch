@@ -82,9 +82,6 @@ section {
 }
 
 h2{
-  position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   color: black;
   text-align: center;
@@ -94,16 +91,16 @@ h2{
 }
 
 .top-hero h2, .footer h2 {
-  position: relative; /* Overriding your absolute center to keep it simple */
+  position: relative;
   top: auto;
   left: auto;
   transform: none;
 }
 .cards {
   position: relative;
-  height: 300vh; /* Give the section height so you can actually scroll */
+  height: 300vh;
   width: 100%;
-  background-color: #f0f0f0; /* Optional: just to see the area */
+  background-color: #f0f0f0;
 }
 
 .card {
@@ -118,9 +115,6 @@ h2{
 }
 
 .card p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translateX(-50%, -50%);
   text-align: center;
   font-size: 20px;
@@ -170,7 +164,14 @@ h2{
   overflow: hidden;
 }
 
+.flip-card-front {
+  background-color: tomato;
+}
+
 .flip-card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
 background-color: #fff;
 transform: rotateY(180deg);
@@ -189,3 +190,83 @@ transform: rotateY(180deg);
 
 }
 
+.footer {
+  background-color: #E8E6FA;
+}
+
+/* Container styles */
+.reveal-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Common text styles for both layers */
+.reveal-text {
+  max-width: 900px;
+  width: 100%;
+  font-size: 1.5rem; /* 2xl */
+  font-weight: 500;
+  line-height: 1.35;
+  padding: 1.5rem 2rem; /* px-8 py-6 */
+  margin: 0;
+}
+
+/* Original content (Background layer) */
+.original-content {
+  color: rgba(255, 255, 255, 0.4); /* white/40 */
+}
+
+.highlight-yellow {
+  color: #DDFC3E;
+}
+
+/* Masked content (Hover layer) */
+.mask-content {
+  color: #000000;
+}
+
+.highlight-red {
+  color: #ef4444; /* text-red-500 */
+}
+
+.mask-reveal-wrapper {
+  height: 100%;
+}
+
+.mask-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: none;
+}
+
+.mask-original-layer {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mask-overlay-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}

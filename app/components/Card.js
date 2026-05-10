@@ -1,25 +1,23 @@
-import Image from "next/image";
 import { forwardRef } from "react";
+import { useResumeStore } from "../store/store";
 
-export const Card = ({ id, frontSrc, frontAlt, backText }) => {
+export const Card = forwardRef(({ id, frontSrc, frontAlt, backText }, ref) => {
+  const addSkill = useResumeStore((state) => state.addSkill);
+
   return (
-    <div className="card" id={id}>
+    <div className="card" id={id} ref={ref}>
       <div className="card-wrapper">
         <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <Image
-              priority
-              src={frontSrc}
-              width={500}
-              height={500}
-              alt={frontAlt}
-            />
-          </div>
+          <div className="flip-card-front"></div>
           <div className="flip-card-back">
-            <p>{backText}</p>
+            <p> Javascript, React</p>
+            <br />
+            <button onClick={() => addSkill("Javascript, React")}>
+              Add Skills
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
-};
+});
