@@ -10,6 +10,9 @@ import TextRevealBrush from "./components/TextRevealBrush";
 import Resume from "./components/Resume";
 import ProjectHoverSection from "./components/ProjectHoverSection";
 import MaskText from "./components/MaskText";
+import Intro from "./components/Intro";
+import TextHeader from "./components/TextHeader";
+import { IMAGES, INTRO_END_DELAY_SEC } from "./components/Intro";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -164,9 +167,26 @@ export default function Home() {
       alt: "Modern workspace with multiple monitors",
     },
   ];
+
   return (
     <ReactLenis root>
       <div className="container" ref={container}>
+        <section
+          style={{
+            height: "100vh",
+            position: "relative",
+          }}
+        >
+          <Intro IMAGES={IMAGES} />
+          <TextHeader variant="logo" delay={0.6}>
+            {" "}
+            Next Timeline{" "}
+          </TextHeader>
+          <TextHeader delay={INTRO_END_DELAY_SEC}>
+            {" "}
+            Every Frame Has Its Place{" "}
+          </TextHeader>
+        </section>
         <section className="top-hero">
           <h2>
             Keep Scrolling to <br /> reveal the Cards
