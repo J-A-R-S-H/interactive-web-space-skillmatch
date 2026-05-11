@@ -5,7 +5,7 @@
   gap: 30px;
   width: 100vw;
   min-height: 100vh;
-  background-color: #e7d77d;
+  background-color: #E8E6FA;
   /* Adds depth to the 3D rotation */
   perspective: 1000px; 
 }
@@ -45,19 +45,19 @@
 }
 
 .card-front {
-  background-color: white;
-  color: black;
+  background-color: #51174E;
+  color: #FFFFF9;
 }
 
 .card-back {
-  background-color: #f1f1f1;
-  color: #4B10A9;
+  background-color: FFFFF9;
+  color: #51174E;
   transform: rotateY(180deg); /* Starts rotated so it shows after flip */
 }
 
 .card-bottom {
   width: 300px;
   height: 45px;
-  background-color: #4B10A9;
+  background-color: #51174E;
   border-radius: 20px;
 }
