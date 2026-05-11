@@ -100,7 +100,7 @@ h2{
   position: relative;
   height: 300vh;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #E8E6FA;;
 }
 
 .card {
@@ -168,7 +168,7 @@ h2{
 }
 
 .flip-card-front {
-  background-color: #E8E6FA;
+  background-color: #51174E;
 }
 
 
@@ -210,33 +210,30 @@ transform: rotateY(180deg);
   overflow: hidden;
 }
 
-/* Common text styles for both layers */
 .reveal-text {
   max-width: 900px;
   width: 100%;
-  font-size: 1.5rem; /* 2xl */
+  font-size: 1.5rem; 
   font-weight: 500;
   line-height: 1.35;
-  padding: 1.5rem 2rem; /* px-8 py-6 */
+  padding: 1.5rem 2rem; 
   margin: 0;
 }
 
-/* Original content (Background layer) */
 .original-content {
-  color: rgba(255, 255, 255, 0.4); /* white/40 */
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .highlight-yellow {
   color: #DDFC3E;
 }
 
-/* Masked content (Hover layer) */
 .mask-content {
   color: #000000;
 }
 
 .highlight-red {
-  color: #ef4444; /* text-red-500 */
+  color: #ef4444;
 }
 
 .mask-reveal-wrapper {

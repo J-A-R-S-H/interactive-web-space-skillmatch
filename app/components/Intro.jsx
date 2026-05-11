@@ -32,7 +32,6 @@ const Intro = () => {
       stagger: { each: 0.25, ease: "power1.out" },
     });
 
-    // 2. Expand container to full screen
     timeline.to(containerRef.current, {
       width: "100%",
       height: "100vh",
@@ -42,7 +41,6 @@ const Intro = () => {
       ease: "power3.inOut",
     });
 
-    // 3. Fade in the radial gradient overlay
     timeline.to(
       radialRef.current,
       {
@@ -94,12 +92,11 @@ const Intro = () => {
               height: "100%",
               objectFit: "cover",
               zIndex: i,
-              clipPath: "inset(0% 0% 100% 0%)", // Initially hidden from bottom
+              clipPath: "inset(0% 0% 100% 0%)",
             }}
           />
         ))}
 
-        {/* Radial Gradient Overlay */}
         <div
           ref={radialRef}
           style={{

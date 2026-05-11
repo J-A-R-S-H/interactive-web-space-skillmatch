@@ -35,7 +35,6 @@ const TextHeader = ({ delay = 0, children, variant = "hero" }) => {
     };
   }, [delay, variant, children]);
 
-  // Common styles for both variants
   const commonTextStyle = {
     fontWeight: "400",
     color: "#ffffff",
@@ -43,7 +42,7 @@ const TextHeader = ({ delay = 0, children, variant = "hero" }) => {
     textShadow: "0 2px 24px rgba(0, 0, 0, 0.45)",
     opacity: 0,
     margin: 0,
-    overflow: "hidden", // Necessary for the SplitText mask effect
+    overflow: "hidden", //
   };
 
   if (variant === "logo") {

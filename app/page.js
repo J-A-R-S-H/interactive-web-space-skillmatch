@@ -180,11 +180,11 @@ export default function Home() {
           <Intro IMAGES={IMAGES} />
           <TextHeader variant="logo" delay={0.6}>
             {" "}
-            Next Timeline{" "}
+            SkillMatch{" "}
           </TextHeader>
           <TextHeader delay={INTRO_END_DELAY_SEC}>
             {" "}
-            Every Frame Has Its Place{" "}
+            Every Workshop has it's place{" "}
           </TextHeader>
         </section>
         <section className="top-hero">
