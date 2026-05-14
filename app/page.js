@@ -1,5 +1,5 @@
 "use client";
-import { Card } from "./components/Card";
+import Card from "./components/Card";
 import { useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -13,6 +13,7 @@ import MaskText from "./components/MaskText";
 import Intro from "./components/Intro";
 import TextHeader from "./components/TextHeader";
 import { IMAGES, INTRO_END_DELAY_SEC } from "./components/Intro";
+import PinSection from "./components/PinSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -201,7 +202,9 @@ export default function Home() {
             <Resume />
           </section>
 
-          {[...Array(4)].map((_, index) => (
+          <PinSection />
+
+          {[...Array()].map((_, index) => (
             <Card
               key={index}
               id={`card-${index + 1}`}
