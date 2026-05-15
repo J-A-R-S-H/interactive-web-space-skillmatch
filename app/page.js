@@ -39,7 +39,7 @@ export default function Home() {
         </section>
 
         <section className="footer">
-          <h2>Footer or Upcoming Section</h2>
+          <h2>In your Resume we find the best parts about you. Try to see it</h2>
         </section>
 
         <TextRevealBrush />

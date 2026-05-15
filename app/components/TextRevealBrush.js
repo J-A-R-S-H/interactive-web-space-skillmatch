@@ -90,7 +90,7 @@ const TextRevealBrush = () => {
           WebkitMaskImage: "url(#smudge-mask)",
         }}
       >
-        <h1>Dig In</h1>
+        <h1>Skills</h1>
       </div>
 
       <svg

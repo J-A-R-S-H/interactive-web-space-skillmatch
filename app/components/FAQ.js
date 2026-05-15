@@ -8,16 +8,16 @@ const FullPageChat = () => {
   const script = [
     { text: "Is SkillMatch free?", sender: "bot" },
     { text: "Yeah! Majority of our features are free. We will only charge the user for joining paid workshops?", sender: "user" },
-    { text: "You're at the center of a new gaming ecosystem.", sender: "bot" },
-    { text: "Sounds cool, how do I join the Navigators?", sender: "user" },
-    { text: "Connect your wallet and hit the 'Launch' button!", sender: "bot" },
-    { text: "Perfect. Let's get started.", sender: "user" },
-    { text: "Yo! Ready to explore the project?", sender: "bot" },
-    { text: "Yeah! What exactly am I looking at?", sender: "user" },
-    { text: "You're at the center of a new gaming ecosystem.", sender: "bot" },
-    { text: "Sounds cool, how do I join the Navigators?", sender: "user" },
-    { text: "Connect your wallet and hit the 'Launch' button!", sender: "bot" },
-    { text: "Perfect. Let's get started.", sender: "user" }
+    { text: "How are workshops verified.", sender: "bot" },
+    { text: "Every Host will showcase their proof of  venue and credentials as well the user's portfolio to be reviewed by a member from the team before approval", sender: "user" },
+    { text: "Can I host a workshop!", sender: "bot" },
+    { text: "Yes apply through the app and we will get back to you within 24hrs.", sender: "user" },
+    { text: "Does it work in my city?", sender: "bot" },
+    { text: "Yeah it is set globally allowing users to join and host workshop all around the world as long as there is a workshop present", sender: "user" },
+    { text: "What about online workshops?", sender: "bot" },
+    { text: "We only do face to face workshops unfortunately. Perhaps later on", sender: "user" },
+    { text: "Is my skills Profile visible to everyone?", sender: "bot" },
+    { text: "it is not unless you choose to share with your friends", sender: "user" }
   ];
 
   const handleChoiceClick = () => {
