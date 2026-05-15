@@ -6,6 +6,12 @@ const FullPageChat = () => {
   const [step, setStep] = useState(1); 
 
   const script = [
+    { text: "Is SkillMatch free?", sender: "bot" },
+    { text: "Yeah! Majority of our features are free. We will only charge the user for joining paid workshops?", sender: "user" },
+    { text: "You're at the center of a new gaming ecosystem.", sender: "bot" },
+    { text: "Sounds cool, how do I join the Navigators?", sender: "user" },
+    { text: "Connect your wallet and hit the 'Launch' button!", sender: "bot" },
+    { text: "Perfect. Let's get started.", sender: "user" },
     { text: "Yo! Ready to explore the project?", sender: "bot" },
     { text: "Yeah! What exactly am I looking at?", sender: "user" },
     { text: "You're at the center of a new gaming ecosystem.", sender: "bot" },
@@ -25,12 +31,12 @@ const FullPageChat = () => {
   };
 
   const bubbleBase = {
-    padding: '40px 60px', // Even bigger padding
-    fontSize: '32px',     // Increased font size for maximum impact
+    padding: '40px 60px',
+    fontSize: '32px',
     fontWeight: '900',
-    border: '5px solid black', // Thicker borders
-    boxShadow: '12px 12px 0px 0px black',
-    maxWidth: '85%',      // Stretches further across the screen
+    border: '5px solid #51174E', 
+    boxShadow: '12px 12px 0px 0px #51174E',
+    maxWidth: '85%',
     marginBottom: '50px',
     fontFamily: 'sans-serif',
     position: 'relative',
@@ -57,28 +63,29 @@ const FullPageChat = () => {
               style={{
                 ...bubbleBase,
                 alignSelf: isBot ? 'flex-start' : 'flex-end',
-                backgroundColor: isBot ? '#FFFFFF' : (isCurrentChoice ? '#FFD700' : '#C4FF61'),
+                backgroundColor: isBot ? '#E8E6FA' : (isCurrentChoice ? '#FFF9C4' : '#FFFFFF'),
                 borderRadius: isBot ? '0px 50px 50px 0px' : '50px 0px 0px 50px',
                 marginLeft: isBot ? '-5px' : '0',
                 marginRight: !isBot ? '-5px' : '0',
                 cursor: isCurrentChoice ? 'pointer' : 'default',
-                // Interactive choice styling
                 transform: isCurrentChoice ? 'scale(1.05)' : 'scale(1)',
                 zIndex: isCurrentChoice ? 10 : 1,
+                // Text remains black for readability on light yellow and white
+                color: '#08000E',
               }}
-              // Adding hover effect via JS for the choice bubble
               onMouseEnter={(e) => {
                 if (isCurrentChoice) {
                   e.currentTarget.style.transform = 'scale(1.1) translateX(-10px)';
-                  e.currentTarget.style.backgroundColor = '#FF5F2E'; // Orange from your logo
-                  e.currentTarget.style.color = 'white';
+                  // Hover effect turns to your deep purple for contrast
+                  e.currentTarget.style.backgroundColor = '#51174E'; 
+                  e.currentTarget.style.color = '#08000E';
                 }
               }}
               onMouseLeave={(e) => {
                 if (isCurrentChoice) {
                   e.currentTarget.style.transform = 'scale(1.05)';
-                  e.currentTarget.style.backgroundColor = '#FFD700';
-                  e.currentTarget.style.color = 'black';
+                  e.currentTarget.style.backgroundColor = '#FFF9C4';
+                  e.currentTarget.style.color = '#08000E';
                 }
               }}
             >
@@ -90,12 +97,12 @@ const FullPageChat = () => {
                   position: 'absolute', 
                   top: '-35px', 
                   right: '40px', 
-                  color: 'black',
+                  color: '#E8E6FA',
                   fontWeight: '900',
-                  backgroundColor: '#C4FF61',
+                  backgroundColor: '#51174E',
                   padding: '4px 10px',
-                  border: '2px solid black',
-                  boxShadow: '3px 3px 0px 0px black'
+                  border: '2px solid #51174E',
+                  boxShadow: '3px 3px 0px 0px #08000E'
                 }}>
                   Click to find the Answer here
                 </div>
