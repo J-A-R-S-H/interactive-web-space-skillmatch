@@ -95,12 +95,12 @@ export default function Home() {
 
         <PinSection />
 
-        <section style={{ position: "relative", zIndex: 10 }}>
-          <Resume />
-        </section>
-
         <section className="footer">
           <ProjectHoverSection projects={projects} />
+        </section>
+
+        <section>
+          <Resume />
         </section>
 
         <section>
