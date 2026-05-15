@@ -161,10 +161,10 @@ const PinSection = () => {
     <div ref={sectionRef} style={STYLES.section}>
       <div ref={rowRef} style={STYLES.row}>
         <Card
-          src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=824&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/../card1.png"
           alt="Motion"
           backText="Motion Design"
-          backfaceStyle={{ backgroundColor: "#27272a" }}
+          backfaceStyle={{ backgroundColor: "#51174E" }}
         >
           <span style={STYLES.numberLabel}>(01)</span>
           <h2 style={STYLES.title}>
@@ -177,10 +177,10 @@ const PinSection = () => {
         </Card>
 
         <Card
-          src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=824&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/../card2.png"
           alt="Imagery"
           backText="Visual Arts"
-          backfaceStyle={{ backgroundColor: "#064e3b" }}
+          backfaceStyle={{ backgroundColor: "#51174E" }}
         >
           <span style={STYLES.numberLabel}>(02)</span>
           <h2 style={STYLES.title}>
@@ -193,10 +193,10 @@ const PinSection = () => {
         </Card>
 
         <Card
-          src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=824&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="/../card3.png"
           alt="Experiment"
           backText="User Experience"
-          backfaceStyle={{ backgroundColor: "#09090b" }}
+          backfaceStyle={{ backgroundColor: "#51174E" }}
         >
           <span style={STYLES.numberLabel}>(03)</span>
           <h2 style={STYLES.title}>Room to experiment and space to play</h2>

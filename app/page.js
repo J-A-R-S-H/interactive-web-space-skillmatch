@@ -14,6 +14,7 @@ import Intro from "./components/Intro";
 import TextHeader from "./components/TextHeader";
 import { IMAGES, INTRO_END_DELAY_SEC } from "./components/Intro";
 import PinSection from "./components/PinSection";
+import AppImagesSection from "./components/AppImagesSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -179,29 +180,18 @@ export default function Home() {
           }}
         >
           <Intro IMAGES={IMAGES} />
-          <TextHeader variant="logo" delay={0.6}>
-            {" "}
-            SkillMatch{" "}
-          </TextHeader>
+          <TextHeader variant="logo" delay={0.6}></TextHeader>
           <TextHeader delay={INTRO_END_DELAY_SEC}>
             {" "}
             Every Workshop has it's place{" "}
           </TextHeader>
         </section>
-        <section className="top-hero">
-          <h2>
-            Keep Scrolling to <br /> reveal the Cards
-          </h2>
-        </section>
+        <AppImagesSection />
 
         <section
           className="cards"
-          style={{ height: "100vh", position: "relative" }}
+          style={{ height: "100vh", position: "relative", marginTop: "4rem" }}
         >
-          <section>
-            <Resume />
-          </section>
-
           <PinSection />
 
           {[...Array()].map((_, index) => (
@@ -214,6 +204,10 @@ export default function Home() {
               ref={(el) => (cardRefs.current[index] = el)}
             />
           ))}
+
+          <section>
+            <Resume />
+          </section>
         </section>
 
         <section className="footer">
@@ -249,8 +243,6 @@ export default function Home() {
             />
           </div>
         </section>
-
-        <TextRevealBrush />
       </div>
     </ReactLenis>
   );

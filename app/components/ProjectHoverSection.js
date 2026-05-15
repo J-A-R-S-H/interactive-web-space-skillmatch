@@ -106,6 +106,17 @@ const ProjectHoverSection = ({
         onMouseLeave={() => setModal({ active: false, index: 0 })}
         className={`${styles.container} ${className}`}
       >
+        <h2
+          style={{
+            fontSize: "72px",
+            color: "#51174E",
+            lineHeight: "1.1",
+            marginTop: "5rem",
+            marginBottom: "3rem",
+          }}
+        >
+          Attend a Workshop
+        </h2>
         {projects.map((project, index) => {
           const isActive = modal.active && modal.index === index;
           return (

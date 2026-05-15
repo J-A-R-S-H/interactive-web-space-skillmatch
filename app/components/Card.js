@@ -64,7 +64,6 @@ const Card = forwardRef(({ src, alt, backText, backfaceStyle = {} }, ref) => {
           willChange: "transform",
         }}
       >
-        {/* FRONT FACE */}
         <div data-card-face="front" style={frontStyle}>
           <Image
             src={src || "/SkillMatchLogo.svg"}
@@ -82,13 +81,13 @@ const Card = forwardRef(({ src, alt, backText, backfaceStyle = {} }, ref) => {
                 style={{
                   margin: 0,
                   fontSize: "1.1rem",
-                  color: "#111827",
+                  color: "#E8E6FA",
                   fontWeight: "700",
                 }}
               >
                 Software Engineer
               </h3>
-              <p style={{ margin: 0, fontSize: "0.8rem", color: "#6b7280" }}>
+              <p style={{ margin: 0, fontSize: "0.8rem", color: "#E8E6FA" }}>
                 Full-time • Remote
               </p>
             </header>
@@ -98,13 +97,11 @@ const Card = forwardRef(({ src, alt, backText, backfaceStyle = {} }, ref) => {
                 style={{
                   fontSize: "0.7rem",
                   fontWeight: "bold",
-                  color: "#374151",
+                  color: "#E8E6FA",
                   textTransform: "uppercase",
                   marginBottom: "8px",
                 }}
-              >
-                Core Competency
-              </p>
+              ></p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                 <span
                   style={{

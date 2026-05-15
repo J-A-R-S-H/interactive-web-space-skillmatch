@@ -1,7 +1,8 @@
 
 
 body {
-  background-color: black;
+  background-color: #E8E6FA;
+  font-family: DM Sans, sans-serif;
 }
 
 
@@ -77,16 +78,10 @@ img {
   object-fit: cover;
 }
 
-section {
-  position: relative;
-}
-
 h2{
-  transform: translate(-50%, -50%);
   color: black;
   text-align: center;
-  font-size: 5vw;
-  font-weight: lighter;
+  font-weight: 700;
   line-height: 100%; 
 }
 
@@ -270,4 +265,8 @@ transform: rotateY(180deg);
   align-items: center;
   justify-content: center;
   pointer-events: none;
+}
+
+.data-card-face {
+color: #E8E6FA;
 }
