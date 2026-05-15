@@ -83,7 +83,6 @@ export default function Home() {
   return (
     <ReactLenis root>
       <div className="container" ref={container}>
-        {/* HERO SECTION */}
         <section style={{ height: "100vh", position: "relative" }}>
           <Intro IMAGES={IMAGES} />
           <TextHeader variant="logo" delay={0.6} />
@@ -92,11 +91,8 @@ export default function Home() {
           </TextHeader>
         </section>
 
-        {/* IMAGE GRID SECTION */}
         <AppImagesSection />
 
-        {/* PINNED CARDS SECTION */}
-        {/* Note: PinSection handles its own GSAP logic and pinning internaly */}
         <PinSection />
 
         {/* RESUME SECTION */}
@@ -104,12 +100,10 @@ export default function Home() {
           <Resume />
         </section>
 
-        {/* PROJECTS SECTION */}
         <section className="footer">
           <ProjectHoverSection projects={projects} />
         </section>
 
-        {/* MASK REVEAL SECTION */}
         <section>
           <div className="reveal-container">
             <MaskText
