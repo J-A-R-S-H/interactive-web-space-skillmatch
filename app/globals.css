@@ -200,7 +200,7 @@ transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222222;
+  background-color: #51174E;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -216,11 +216,13 @@ transform: rotateY(180deg);
 }
 
 .original-content {
-  color: rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
 .highlight-yellow {
-  color: #DDFC3E;
+  color: #FFFFB9;
+  font-weight: 700;
+
 }
 
 .mask-content {
@@ -228,7 +230,8 @@ transform: rotateY(180deg);
 }
 
 .highlight-red {
-  color: #ef4444;
+  color: #51174E;
+  font-weight: 700;
 }
 
 .mask-reveal-wrapper {

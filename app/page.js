@@ -106,21 +106,21 @@ export default function Home() {
         <section>
           <div className="reveal-container">
             <MaskText
-              maskBackground="#DDFC3E"
+              maskBackground="#FFCFE9"
               maskSizeSmall={20}
               maskSizeLarge={80}
               className="mask-reveal-wrapper"
               originalContent={
                 <p className="reveal-text original-content">
-                  Writing{" "}
-                  <span className="highlight-yellow">beautiful code</span>{" "}
-                  means...
+                  Most often people find greatness in only educational courses in order to gain valuable {" "}
+                  <span className="highlight-yellow">Skills</span>{" "}
+                  in order to become successful.
                 </p>
               }
               maskContent={
                 <p className="reveal-text mask-content">
-                  Building <span className="highlight-red">great software</span>{" "}
-                  requires...
+                  Gping to Workshops and making connections and genuinely learning from others by forming a connection gives an <span className="highlight-red" >Experience</span>{" "}
+                  that takes you far in any industry by making one both proficient and successful.
                 </p>
               }
             />
