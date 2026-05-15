@@ -116,7 +116,6 @@ const FullPageChat = () => {
           from { opacity: 0; transform: translateY(40px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        body { margin: 0; background-color: #F9F6EE; }
       `}</style>
     </div>
   );

@@ -95,7 +95,6 @@ export default function Home() {
 
         <PinSection />
 
-        {/* RESUME SECTION */}
         <section style={{ position: "relative", zIndex: 10 }}>
           <Resume />
         </section>
@@ -128,7 +127,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FAQ SECTION */}
         <section>
           <FAQ />
         </section>
