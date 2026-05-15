@@ -9,7 +9,6 @@ export const IMAGES = [
   "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
   "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
   "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
-  "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
 export const INTRO_END_DELAY_SEC = 0.35 + (IMAGES.length - 1) * 0.25 + 1 + 1;

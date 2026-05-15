@@ -30,7 +30,10 @@ const ProjectHoverSection = ({
 
   useGSAP(
     () => {
+      // 1. Ensure the container ref exists along with the other checks
       if (!isDesktop || !thumbnailRef.current || !containerRef.current) return;
+
+      const container = containerRef.current;
 
       gsap.set(thumbnailRef.current, {
         scale: 0,
@@ -49,7 +52,7 @@ const ProjectHoverSection = ({
 
       let hasPosition = false;
       const handleMouseMove = (e) => {
-        const rect = containerRef.current.getBoundingClientRect();
+        const rect = container.getBoundingClientRect();
         const relX = e.clientX - rect.left;
         const relY = e.clientY - rect.top;
 
@@ -62,8 +65,9 @@ const ProjectHoverSection = ({
         }
       };
 
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
+      container.addEventListener("mousemove", handleMouseMove);
+
+      return () => container.removeEventListener("mousemove", handleMouseMove);
     },
     { dependencies: [isDesktop] },
   );

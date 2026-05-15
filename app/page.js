@@ -10,6 +10,7 @@ import { IMAGES, INTRO_END_DELAY_SEC } from "./components/Intro";
 import PinSection from "./components/PinSection";
 import AppImagesSection from "./components/AppImagesSection";
 import FAQ from "./components/FAQ";
+import SlidingChips from "./components/SlidingChips";
 
 export default function Home() {
   const container = useRef(null);
@@ -95,32 +96,78 @@ export default function Home() {
 
         <PinSection />
 
+        <section>
+          <SlidingChips />
+        </section>
+
         <section className="footer">
           <ProjectHoverSection projects={projects} />
         </section>
 
-        <section>
+        <section
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            marginTop: "20rem",
+            marginBottom: "20rem",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "72px",
+              color: "#51174E",
+              lineHeight: "1.1",
+              marginTop: "5rem",
+              marginBottom: "3rem",
+            }}
+          >
+            Your Final Resume{" "}
+          </h2>
           <Resume />
         </section>
 
         <section>
-          <div className="reveal-container">
+          <div
+            className="reveal-container"
+            style={{
+              height: "60vh",
+            }}
+          >
             <MaskText
-              maskBackground="#DDFC3E"
+              maskBackground="#FFCFE9"
               maskSizeSmall={20}
               maskSizeLarge={80}
               className="mask-reveal-wrapper"
               originalContent={
-                <p className="reveal-text original-content">
-                  Writing{" "}
-                  <span className="highlight-yellow">beautiful code</span>{" "}
-                  means...
+                <p
+                  className="reveal-text original-content"
+                  style={{
+                    maxWidth: "500px",
+                    textAlign: "center",
+                    textWrap: "balance",
+                    margin: "0 auto",
+                  }}
+                >
+                  Most people seek greatness through educational courses to gain
+                  valuable <span className="highlight-yellow">Skills </span>
+                  needed to become truly successful.
                 </p>
               }
               maskContent={
-                <p className="reveal-text mask-content">
-                  Building <span className="highlight-red">great software</span>{" "}
-                  requires...
+                <p
+                  className="reveal-text mask-content"
+                  style={{
+                    maxWidth: "500px",
+                    textAlign: "center",
+                    textWrap: "balance",
+                    margin: "0 auto",
+                  }}
+                >
+                  Attending workshops and learning from others creates an{" "}
+                  <span className="highlight-red">Experience</span> that drives
+                  proficiency and success in any industry.
                 </p>
               }
             />
@@ -128,6 +175,17 @@ export default function Home() {
         </section>
 
         <section>
+          <h2
+            style={{
+              fontSize: "72px",
+              color: "#51174E",
+              lineHeight: "1.1",
+              marginTop: "5rem",
+              marginBottom: "3rem",
+            }}
+          >
+            FAQ
+          </h2>
           <FAQ />
         </section>
       </div>
