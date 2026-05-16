@@ -75,6 +75,7 @@ const AppImagesSection = () => {
           alignItems: "center",
           gap: "2rem",
           boxSizing: "border-box",
+          justifyContent: "space-between",
         }}
       >
         <h2
