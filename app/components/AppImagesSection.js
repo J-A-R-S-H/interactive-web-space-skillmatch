@@ -91,7 +91,7 @@ const AppImagesSection = () => {
 
         <img
           ref={screenshotRef}
-          src="/appscreenshots.png"
+          src="/appScreenshots.png"
           alt="App Screenshots"
           style={{ width: "600px", height: "auto" }}
         />
