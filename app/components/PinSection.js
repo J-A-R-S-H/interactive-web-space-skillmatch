@@ -161,7 +161,7 @@ const PinSection = () => {
     <div ref={sectionRef} style={STYLES.section}>
       <div ref={rowRef} style={STYLES.row}>
         <Card
-          src="/card1.png"
+          src="/cardOne.png"
           alt="Motion"
           backText="Motion Design"
           backfaceStyle={{ backgroundColor: "#51174E" }}
@@ -177,7 +177,7 @@ const PinSection = () => {
         </Card>
 
         <Card
-          src="/card2.png"
+          src="/cardTwo.png"
           alt="Imagery"
           backText="Visual Arts"
           backfaceStyle={{ backgroundColor: "#51174E" }}
@@ -193,7 +193,7 @@ const PinSection = () => {
         </Card>
 
         <Card
-          src="/card3.png"
+          src="/cardThree.png"
           alt="Experiment"
           backText="User Experience"
           backfaceStyle={{ backgroundColor: "#51174E" }}
